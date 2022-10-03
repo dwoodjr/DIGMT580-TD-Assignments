@@ -1,3 +1,6 @@
+import maya.standalone
+maya.standalone.initialize(name = "python")
+
 import argparse
 import maya.cmds as cmds
   
