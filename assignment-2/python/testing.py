@@ -1,37 +1,34 @@
-import os
-import site
-import sys
-
-os.environ["MAYA_LOCATION"] = "E:\\Program Files\\Autodesk\\Maya2023\\bin"
-os.environ["PATH"] = "E:\\Program Files\\Autodesk\\Maya2023\\bin;" + os.environ["PATH"]
-site.addsitedir("E:\\Program Files\\Autodesk\\Maya2023\\Python\\Lib\\site-packages")
-site.addsitedir("E:\\Program Files\\Autodesk\\Maya2023\\Python\\DLLs")
 
 '''
-mayaDllPath = "E:\\Program Files\\Autodesk\\Maya2023\\Python\\DLLs"
-mayaSitePath = "E:\\Program Files\\Autodesk\\Maya2023\\Python\\DLLs"
-sys.path.append(mayaDllPath)
-sys.path.append(mayaSitePath)
+This script will create a cylinder that with a specified height and radius passed in as arguments through argparse
+ 
 '''
-
+#argparse setup
 import argparse
 parser = argparse.ArgumentParser(description="Enter the Height and Radius of the cylinder.")
+
+#height and radius arguments
 parser.add_argument("height", type = float, default = 5, help = "The height of the cylinder")
 parser.add_argument("radius", type = float, default = 2, help = "The radius of the cylinder")
 
 args = parser.parse_args()
 
-
+#import and initialize maya standalone
 import maya.standalone
 maya.standalone.initialize(name = "python")
 
+#import maya API commands
 import maya.cmds as cmds
 
-def create_polygon_cylinder():
-    print("creating a cylider with a height of {} and a radius of {}".format(args.height, args.radius))  
-    cmds.polyCylinder(ch = True, o = True, h = args.height, r = args.radius, sx = 25, sy = 25, sz = 25)
+#funtion that creates a cylinder
+def create_polygon_cylinder(height,radius):
+    print("creating a cylider with a height of {} and a radius of {}".format(height,radius))  
+    cmds.polyCylinder(ch = True, o = True, h = height, r = radius, sx = 25, sy = 25, sz = 25)
 
-create_polygon_cylinder(5,10)
-cmds.file(rename = "cyliner.ma")
+#call funtion 
+create_polygon_cylinder(args.height,args.radius)
+
+#rename a file and save it as maya ascii
+cmds.file(rename = "cylinder.ma")
 cmds.file(save = True, type = "mayaAscii")
     
