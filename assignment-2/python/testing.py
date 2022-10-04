@@ -20,7 +20,7 @@ maya.standalone.initialize(name = "python")
 #import maya API commands
 import maya.cmds as cmds
 
-#funtion that creates a cylinder
+#function that creates a cylinder
 def create_polygon_cylinder(height,radius):
     print("creating a cylider with a height of {} and a radius of {}".format(height,radius))  
     cmds.polyCylinder(ch = True, o = True, h = height, r = radius, sx = 25, sy = 25, sz = 25)
