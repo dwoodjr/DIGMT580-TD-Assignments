@@ -20,9 +20,11 @@ To run the scripts navigate to a desired file directory.
 
 Open a CMD terminal as administrator and load the macros with:
 > DOSKEY /macros filename=macros.aliases
+
 Run the DOSKEY command to create the environment variable
 > DOSKEY casset
 
 In the same directory as the python scripts run the two scripts as follows:
 > python setDir.py
+
 > MayaPy makeGrp.py
