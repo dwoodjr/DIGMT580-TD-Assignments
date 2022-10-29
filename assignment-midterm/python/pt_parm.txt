@@ -1,3 +1,6 @@
+import math
+import random
+
 geo = hou.pwd().geometry()
 
 # Add code to modify contents of geo.
@@ -30,5 +33,5 @@ for point in points:
     point.setAttribValue("time", px)
     point.setAttribValue("duration", 1.0)
     point.setAttribValue("vel", 1.0)
-    point.setAttribValue("channel", 8)  
+    point.setAttribValue("channel", random.randint(1,16))  
         

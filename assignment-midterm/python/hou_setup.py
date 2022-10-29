@@ -7,7 +7,7 @@ def enableHouModule():
         sys.setdlopenflags(old_dlopen_flags | os.RTLD_GLOBAL)
 
     if sys.platform == "win32" and hasattr(os, "add_dll_directory"):
-        os.add_dll_directory("{}/bin".format(os.environ["HFS"]))
+        os.add_dll_directory('{}/bin'.format(os.environ['HFS']))
 
     try:
         import hou
