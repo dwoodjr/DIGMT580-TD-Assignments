@@ -42,6 +42,7 @@ Make sure to pass in the following arguments: Project Path
 The second script will launch Maya. The remainder of the scripts are run in Maya Script Editor.
 
 > python setDir.py args*
+
 > python open.py
 
 2. In the Maya Script Editor load the python scripts (file->open script->navigate to script location).
@@ -49,4 +50,5 @@ Both scripts do the same thing, create a specified number of cubes with specifie
 One script is traditional Maya Python, the other is a PySide Qt Widget version.
 
 > mayaUI.py
+
 > pyMayaGUI.py
