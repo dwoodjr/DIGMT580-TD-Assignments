@@ -23,7 +23,7 @@ Contains scripts for setting the houdini project and environment variables, proc
 - gen_hmt.py
   - This script is responsible for generating the node network needed to create midi note data
 - pt_parm.txt
-  - This file contains the python code that is imported into the PPython SOP node in the gen_hmt.py script.
+  - This file contains the python code that is imported into the Python SOP node in the gen_hmt.py script.
 
 ### Etc
 
